@@ -1,7 +1,11 @@
 let readline = require ('readline-sync')
 
 let nome = readline.question("Qual é o seu nome completo?")
-let idade = readline.question("Qual é a sua idade?")
+let dia = readline.question("Qual é o dia que você nasceu?")
+let mes = readline.question("Qual é o mês que você nasceu?")
+let ano = readline.question("Qual é o ano que você nasceu?")
+let dataNascimento = dia + "/" + mes + "/" + ano
+let telefone = readline.question("Qual é o seu número de telefone?")
 let animal = readline.question("voce tem algum animal de estimação? (sim/não)")
 let quantidadeAnimal = 0
 let tipoAnimal = ""
@@ -11,7 +15,7 @@ if (animal == "sim") {
 } else {
     animal = "Não possui animal de estimação"
 }  
-
+let idadeAno = 2025 - ano
 let cor = readline.question("Qual é a sua cor favorita?")
 let comida = readline.question("Qual é a sua comida favorita?")
 let musica = readline.question("Qual é a sua música favorita?")
@@ -19,7 +23,13 @@ let filme = readline.question("Qual é o seu filme favorito?")
 
 console.log("------------------------------------Fórmulario de informações do úsuário------------------------------------")
 console.log(`Nome completo: ${nome}`)
-console.log(`Idade: ${idade}`)
+console.log(`Data de nascimento: ${dataNascimento}`)
+if (idadeAno >= 18) {
+    console.log(`Ao finalizar este ano, ${nome} será maior de idade`) 
+} else {
+    console.log(`Ao finalizar este ano, ${nome} será menor de idade`)
+}
+console.log(`Número de telefone: ${telefone}`)
 console.log(`Animal de estimação: ${animal}`)
 if (quantidadeAnimal > 0) {
 console.log(`Quantidade de animais de estimação: ${quantidadeAnimal}`)
